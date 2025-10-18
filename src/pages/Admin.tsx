@@ -232,19 +232,19 @@ const Admin: React.FC = () => {
     return (
       <div className="overflow-hidden rounded-3xl border shadow-2xl backdrop-blur" style={tableShellStyle}>
         <div
-          className="flex flex-wrap items-center justify-between gap-3 border-b px-6 py-5"
+          className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b px-4 sm:px-6 py-4 sm:py-5"
           style={{ borderColor: secondaryTint(0.35) }}
         >
           <div>
-            <h2 className="text-xl font-semibold" style={{ color: colors.secondaryHex }}>
+            <h2 className="text-lg sm:text-xl font-semibold" style={{ color: colors.secondaryHex }}>
               Contact messages
             </h2>
-            <p className="text-sm" style={{ color: secondaryTint(0.65) }}>
+            <p className="text-xs sm:text-sm" style={{ color: secondaryTint(0.65) }}>
               Review student and client enquiries with all supporting details.
             </p>
           </div>
           <span
-            className="rounded-full px-3 py-1 text-xs font-semibold"
+            className="rounded-full px-3 py-1 text-xs font-semibold w-fit"
             style={{ background: colors.primaryHex, color: colors.white }}
           >
             {contacts.length} records
@@ -252,15 +252,15 @@ const Admin: React.FC = () => {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y text-left text-sm" style={{ color: colors.secondaryHex }}>
+          <table className="min-w-full divide-y text-left text-xs sm:text-sm" style={{ color: colors.secondaryHex }}>
             <thead style={{ background: primaryTint(0.12), color: colors.primaryHex }}>
               <tr>
-                <th className="px-6 py-3 font-bold text-sm tracking-wide" style={{ color: colors.primaryHex }}>Student</th>
-                <th className="px-6 py-3 font-bold text-sm tracking-wide" style={{ color: colors.primaryHex }}>Contact</th>
-                <th className="px-6 py-3 font-bold text-sm tracking-wide" style={{ color: colors.primaryHex }}>Company &amp; Service</th>
-                <th className="px-6 py-3 font-bold text-sm tracking-wide" style={{ color: colors.primaryHex }}>Message</th>
-                <th className="px-6 py-3 font-bold text-sm tracking-wide" style={{ color: colors.primaryHex }}>Received</th>
-                <th className="px-6 py-3 font-bold text-sm tracking-wide" style={{ color: colors.primaryHex }}>Actions</th>
+                <th className="px-3 sm:px-6 py-2 sm:py-3 font-bold text-xs sm:text-sm tracking-wide" style={{ color: colors.primaryHex }}>Student</th>
+                <th className="px-3 sm:px-6 py-2 sm:py-3 font-bold text-xs sm:text-sm tracking-wide" style={{ color: colors.primaryHex }}>Contact</th>
+                <th className="hidden lg:table-cell px-6 py-3 font-bold text-sm tracking-wide" style={{ color: colors.primaryHex }}>Company &amp; Service</th>
+                <th className="hidden md:table-cell px-3 sm:px-6 py-2 sm:py-3 font-bold text-xs sm:text-sm tracking-wide" style={{ color: colors.primaryHex }}>Message</th>
+                <th className="px-3 sm:px-6 py-2 sm:py-3 font-bold text-xs sm:text-sm tracking-wide" style={{ color: colors.primaryHex }}>Received</th>
+                <th className="px-3 sm:px-6 py-2 sm:py-3 font-bold text-xs sm:text-sm tracking-wide" style={{ color: colors.primaryHex }}>Actions</th>
               </tr>
             </thead>
             <tbody>
