@@ -11,7 +11,7 @@ const SimpleHeader = () => {
     <header className="w-full bg-white border-b" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link to={authed ? "/admin" : "/login"} className="flex items-center gap-2">
-          <img src="src/components/logo final-01.svg" alt="Panabotics" className="h-10 w-auto" />
+          <img src="/logo.svg" alt="Panabotics" className="h-10 w-auto" />
           <span className="hidden sm:block text-sm font-semibold" style={{ color: colors.secondaryHex }}>Panabotics</span>
         </Link>
         <nav className="flex items-center gap-2 sm:gap-3">
