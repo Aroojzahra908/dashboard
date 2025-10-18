@@ -232,19 +232,19 @@ const Admin: React.FC = () => {
     return (
       <div className="overflow-hidden rounded-3xl border shadow-2xl backdrop-blur" style={tableShellStyle}>
         <div
-          className="flex flex-wrap items-center justify-between gap-3 border-b px-6 py-5"
+          className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b px-4 sm:px-6 py-4 sm:py-5"
           style={{ borderColor: secondaryTint(0.35) }}
         >
           <div>
-            <h2 className="text-xl font-semibold" style={{ color: colors.secondaryHex }}>
+            <h2 className="text-lg sm:text-xl font-semibold" style={{ color: colors.secondaryHex }}>
               Contact messages
             </h2>
-            <p className="text-sm" style={{ color: secondaryTint(0.65) }}>
+            <p className="text-xs sm:text-sm" style={{ color: secondaryTint(0.65) }}>
               Review student and client enquiries with all supporting details.
             </p>
           </div>
           <span
-            className="rounded-full px-3 py-1 text-xs font-semibold"
+            className="rounded-full px-3 py-1 text-xs font-semibold w-fit"
             style={{ background: colors.primaryHex, color: colors.white }}
           >
             {contacts.length} records
@@ -252,39 +252,39 @@ const Admin: React.FC = () => {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y text-left text-sm" style={{ color: colors.secondaryHex }}>
+          <table className="min-w-full divide-y text-left text-xs sm:text-sm" style={{ color: colors.secondaryHex }}>
             <thead style={{ background: primaryTint(0.12), color: colors.primaryHex }}>
               <tr>
-                <th className="px-6 py-3 font-bold text-sm tracking-wide" style={{ color: colors.primaryHex }}>Student</th>
-                <th className="px-6 py-3 font-bold text-sm tracking-wide" style={{ color: colors.primaryHex }}>Contact</th>
-                <th className="px-6 py-3 font-bold text-sm tracking-wide" style={{ color: colors.primaryHex }}>Company &amp; Service</th>
-                <th className="px-6 py-3 font-bold text-sm tracking-wide" style={{ color: colors.primaryHex }}>Message</th>
-                <th className="px-6 py-3 font-bold text-sm tracking-wide" style={{ color: colors.primaryHex }}>Received</th>
-                <th className="px-6 py-3 font-bold text-sm tracking-wide" style={{ color: colors.primaryHex }}>Actions</th>
+                <th className="px-3 sm:px-6 py-2 sm:py-3 font-bold text-xs sm:text-sm tracking-wide" style={{ color: colors.primaryHex }}>Student</th>
+                <th className="px-3 sm:px-6 py-2 sm:py-3 font-bold text-xs sm:text-sm tracking-wide" style={{ color: colors.primaryHex }}>Contact</th>
+                <th className="hidden lg:table-cell px-6 py-3 font-bold text-sm tracking-wide" style={{ color: colors.primaryHex }}>Company &amp; Service</th>
+                <th className="hidden md:table-cell px-3 sm:px-6 py-2 sm:py-3 font-bold text-xs sm:text-sm tracking-wide" style={{ color: colors.primaryHex }}>Message</th>
+                <th className="px-3 sm:px-6 py-2 sm:py-3 font-bold text-xs sm:text-sm tracking-wide" style={{ color: colors.primaryHex }}>Received</th>
+                <th className="px-3 sm:px-6 py-2 sm:py-3 font-bold text-xs sm:text-sm tracking-wide" style={{ color: colors.primaryHex }}>Actions</th>
               </tr>
             </thead>
             <tbody>
               {contacts.map((contact) => (
                 <tr key={contact.id} style={{ borderBottom: `1px solid ${secondaryTint(0.35)}`, transition: 'background-color 0.18s ease' }} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = `rgba(${colors.primaryRgb},0.08)`)} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}>
-                  <td className="px-6 py-4">
-                    <p className="font-semibold" style={{ color: colors.secondaryHex }}>
+                  <td className="px-3 sm:px-6 py-3 sm:py-4">
+                    <p className="font-semibold text-xs sm:text-sm" style={{ color: colors.secondaryHex }}>
                       {formatFullName(contact.first_name, contact.last_name)}
                     </p>
                     <p className="text-xs" style={{ color: secondaryTint(0.6) }}>
                       {contact.role || contact.company || "—"}
                     </p>
                   </td>
-                  <td className="px-6 py-4">
+                  <td className="px-3 sm:px-6 py-3 sm:py-4">
                     {contact.email ? (
                       <a
                         href={`mailto:${contact.email}`}
                         style={{ color: colors.primaryHex }}
-                        className="text-sm hover:underline"
+                        className="text-xs sm:text-sm hover:underline break-all"
                       >
                         {contact.email}
                       </a>
                     ) : (
-                      <p className="text-sm" style={{ color: secondaryTint(0.8) }}>
+                      <p className="text-xs sm:text-sm" style={{ color: secondaryTint(0.8) }}>
                         —
                       </p>
                     )}
@@ -294,7 +294,7 @@ const Admin: React.FC = () => {
                       </p>
                     ) : null}
                   </td>
-                  <td className="px-6 py-4">
+                  <td className="hidden lg:table-cell px-6 py-4">
                     <p className="text-sm" style={{ color: colors.secondaryHex }}>
                       {contact.company || "—"}
                     </p>
@@ -305,26 +305,26 @@ const Admin: React.FC = () => {
                       {contact.service || "Not specified"}
                     </span>
                   </td>
-                  <td className="px-6 py-4">
-                    <p className="max-w-md text-sm" style={{ color: colors.secondaryHex }}>
+                  <td className="hidden md:table-cell px-3 sm:px-6 py-3 sm:py-4">
+                    <p className="max-w-md text-xs sm:text-sm line-clamp-2" style={{ color: colors.secondaryHex }}>
                       {contact.message || "No additional message supplied."}
                     </p>
                   </td>
-                  <td className="px-6 py-4 text-sm" style={{ color: secondaryTint(0.6) }}>
+                  <td className="px-3 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm" style={{ color: secondaryTint(0.6) }}>
                     {formatDateTime(contact.created_at)}
                   </td>
-                  <td className="px-6 py-4">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
+                  <td className="px-3 sm:px-6 py-3 sm:py-4">
+                    <div className="flex flex-row items-center gap-1">
                       <Button
                         onClick={async () => await handleApprove('contact_messages', contact.id)}
-                        className="w-24 h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center"
+                        className="w-16 sm:w-20 h-6 sm:h-7 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center whitespace-nowrap"
                         style={{ background: contact.status === 'selected' ? '#10b981' : '#00b4bb', color: '#fff' }}
                       >
                         {contact.status === 'selected' ? 'Approved' : 'Pending'}
                       </Button>
                       <Button
                         onClick={async () => await handleDelete('contact_messages', contact.id)}
-                        className="w-24 h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center"
+                        className="w-16 sm:w-20 h-6 sm:h-7 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center whitespace-nowrap"
                         style={{ background: '#ef4444', color: '#fff' }}
                       >
                         Delete
@@ -430,13 +430,13 @@ const Admin: React.FC = () => {
                       Job ID: {application.job_id ?? "—"}
                     </p>
                   </td>
-                  <td className="px-6 py-4 space-y-2">
+                  <td className="px-6 py-4 space-y-2 text-center">
                     {application.resume_file_url ? (
                       <a
                         href={application.resume_file_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm font-semibold hover:underline"
+                        className="text-sm font-semibold hover:underline inline-block"
                         style={{ color: colors.primaryHex }}
                       >
                         View resume
@@ -585,6 +585,7 @@ const Admin: React.FC = () => {
                 <th className="px-6 py-3 font-bold text-sm tracking-wide">Source</th>
                 <th className="px-6 py-3 font-bold text-sm tracking-wide">Contact</th>
                 <th className="px-6 py-3 font-bold text-sm tracking-wide">Details</th>
+                <th className="px-6 py-3 font-bold text-sm tracking-wide">Resume</th>
                 <th className="px-6 py-3 font-bold text-sm tracking-wide">Actions</th>
               </tr>
             </thead>
@@ -599,6 +600,23 @@ const Admin: React.FC = () => {
                     {row.email ? <a href={`mailto:${row.email}`} style={{ color: colors.primaryHex }}>{row.email}</a> : <span style={{ color: secondaryTint(0.8) }}>—</span>}
                   </td>
                   <td className="px-6 py-4"><p style={{ color: colors.secondaryHex }}>{row.position || row.company || '—'}</p></td>
+                  <td className="px-6 py-4 text-center">
+                    {row.resume_file_url ? (
+                      <a
+                        href={row.resume_file_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-semibold hover:underline inline-block"
+                        style={{ color: colors.primaryHex }}
+                      >
+                        View resume
+                      </a>
+                    ) : (
+                      <p className="text-sm" style={{ color: secondaryTint(0.8) }}>
+                        —
+                      </p>
+                    )}
+                  </td>
                   <td className="px-6 py-4">
                     <Button onClick={async () => await handleDelete(row._source === 'applications' ? 'job_applications' : 'contact_messages', row.id)} className="w-24 h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center" style={{ background: '#ef4444', color: '#fff' }}>
                       Delete
@@ -650,14 +668,19 @@ const Admin: React.FC = () => {
                 </span>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <a href="/" className="inline-flex items-center px-4 py-2 rounded-full font-medium" style={{ background: colors.primaryHex, color: colors.white }}>
-                View site
-              </a>
-              <button onClick={fetchAll} className="inline-flex items-center px-4 py-2 rounded-full border" style={{ borderColor: primaryTint(0.06), color: colors.secondaryHex }}>
+            <div className="flex flex-wrap items-center gap-2 lg:gap-3 mr-6 lg:mr-12">
+              <button
+                onClick={fetchAll}
+                className="flex-1 min-w-[80px] lg:flex-none lg:w-auto inline-flex items-center justify-center px-3 py-1 lg:px-4 lg:py-2 rounded-full text-sm lg:text-base font-medium transition-all hover:opacity-90 -ml-1 lg:-ml-2"
+                style={{ background: colors.primaryHex, color: colors.white }}
+              >
                 Refresh
               </button>
-              <button onClick={() => { logout(); navigate("/login", { replace: true }); }} className="inline-flex items-center px-4 py-2 rounded-full border" style={{ borderColor: primaryTint(0.06), color: colors.secondaryHex }}>
+              <button
+                onClick={() => { logout(); navigate("/login", { replace: true }); }}
+                className="flex-1 min-w-[80px] lg:flex-none lg:w-auto inline-flex items-center justify-center px-3 py-1 lg:px-4 lg:py-2 rounded-full text-sm lg:text-base font-medium transition-all hover:opacity-90"
+                style={{ background: colors.primaryHex, color: colors.white }}
+              >
                 Logout
               </button>
             </div>
