@@ -650,7 +650,7 @@ const Admin: React.FC = () => {
                 </span>
               </div>
             </div>
-            <div className="flex flex-wrap items-center gap-3 lg:gap-4 mr-4 lg:mr-8">
+            <div className="flex flex-wrap items-center gap-3 lg:gap-4 mr-6 lg:mr-12">
               <button
                 onClick={fetchAll}
                 className="flex-1 min-w-[120px] lg:flex-none lg:w-auto inline-flex items-center justify-center px-4 py-2 lg:px-6 lg:py-3 rounded-full font-medium transition-all hover:opacity-90 -ml-1 lg:-ml-2"
