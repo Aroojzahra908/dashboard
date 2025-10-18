@@ -668,17 +668,17 @@ const Admin: React.FC = () => {
                 </span>
               </div>
             </div>
-            <div className="flex flex-wrap items-center gap-3 lg:gap-4 mr-6 lg:mr-12">
+            <div className="flex flex-wrap items-center gap-2 lg:gap-3 mr-6 lg:mr-12">
               <button
                 onClick={fetchAll}
-                className="flex-1 min-w-[120px] lg:flex-none lg:w-auto inline-flex items-center justify-center px-4 py-2 lg:px-6 lg:py-3 rounded-full font-medium transition-all hover:opacity-90 -ml-1 lg:-ml-2"
+                className="flex-1 min-w-[80px] lg:flex-none lg:w-auto inline-flex items-center justify-center px-3 py-1 lg:px-4 lg:py-2 rounded-full text-sm lg:text-base font-medium transition-all hover:opacity-90 -ml-1 lg:-ml-2"
                 style={{ background: colors.primaryHex, color: colors.white }}
               >
                 Refresh
               </button>
               <button
                 onClick={() => { logout(); navigate("/login", { replace: true }); }}
-                className="flex-1 min-w-[120px] lg:flex-none lg:w-auto inline-flex items-center justify-center px-4 py-2 lg:px-6 lg:py-3 rounded-full font-medium transition-all hover:opacity-90"
+                className="flex-1 min-w-[80px] lg:flex-none lg:w-auto inline-flex items-center justify-center px-3 py-1 lg:px-4 lg:py-2 rounded-full text-sm lg:text-base font-medium transition-all hover:opacity-90"
                 style={{ background: colors.primaryHex, color: colors.white }}
               >
                 Logout
