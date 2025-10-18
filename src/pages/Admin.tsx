@@ -456,17 +456,17 @@ const Admin: React.FC = () => {
                     {formatDateTime(application.created_at)}
                   </td>
                   <td className="px-6 py-4">
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
                       <Button
                         onClick={async () => await handleApprove('job_applications', application.id)}
-                        className="h-9 min-w-[110px] rounded-full px-4 text-sm font-semibold shadow-sm"
+                        className="w-full sm:w-auto h-9 rounded-full px-4 text-sm font-semibold shadow-sm"
                         style={{ background: application.status === 'selected' ? '#10b981' : '#00b4bb', color: '#fff' }}
                       >
                         {application.status === 'selected' ? 'Approved' : 'Pending'}
                       </Button>
                       <Button
                         onClick={async () => await handleDelete('job_applications', application.id)}
-                        className="h-9 min-w-[96px] rounded-full px-4 text-sm font-semibold shadow-sm"
+                        className="w-full sm:w-auto h-9 rounded-full px-4 text-sm font-semibold shadow-sm"
                         style={{ background: '#ef4444', color: '#fff' }}
                       >
                         Delete
