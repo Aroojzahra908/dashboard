@@ -613,7 +613,7 @@ const Admin: React.FC = () => {
                       </a>
                     ) : (
                       <p className="text-sm" style={{ color: secondaryTint(0.8) }}>
-                        {row.resume_file_name || "No resume"}
+                        —
                       </p>
                     )}
                   </td>
