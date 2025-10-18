@@ -314,17 +314,17 @@ const Admin: React.FC = () => {
                     {formatDateTime(contact.created_at)}
                   </td>
                   <td className="px-6 py-4">
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
                       <Button
                         onClick={async () => await handleApprove('contact_messages', contact.id)}
-                        className="h-9 min-w-[110px] rounded-full px-4 text-sm font-semibold shadow-sm"
+                        className="w-24 h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center"
                         style={{ background: contact.status === 'selected' ? '#10b981' : '#00b4bb', color: '#fff' }}
                       >
                         {contact.status === 'selected' ? 'Approved' : 'Pending'}
                       </Button>
                       <Button
                         onClick={async () => await handleDelete('contact_messages', contact.id)}
-                        className="h-9 min-w-[96px] rounded-full px-4 text-sm font-semibold shadow-sm"
+                        className="w-24 h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center"
                         style={{ background: '#ef4444', color: '#fff' }}
                       >
                         Delete
@@ -456,17 +456,17 @@ const Admin: React.FC = () => {
                     {formatDateTime(application.created_at)}
                   </td>
                   <td className="px-6 py-4">
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
                       <Button
                         onClick={async () => await handleApprove('job_applications', application.id)}
-                        className="h-9 min-w-[110px] rounded-full px-4 text-sm font-semibold shadow-sm"
+                        className="w-24 h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center"
                         style={{ background: application.status === 'selected' ? '#10b981' : '#00b4bb', color: '#fff' }}
                       >
                         {application.status === 'selected' ? 'Approved' : 'Pending'}
                       </Button>
                       <Button
                         onClick={async () => await handleDelete('job_applications', application.id)}
-                        className="h-9 min-w-[96px] rounded-full px-4 text-sm font-semibold shadow-sm"
+                        className="w-24 h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center"
                         style={{ background: '#ef4444', color: '#fff' }}
                       >
                         Delete
@@ -600,7 +600,7 @@ const Admin: React.FC = () => {
                   </td>
                   <td className="px-6 py-4"><p style={{ color: colors.secondaryHex }}>{row.position || row.company || '—'}</p></td>
                   <td className="px-6 py-4">
-                    <Button onClick={async () => await handleDelete(row._source === 'applications' ? 'job_applications' : 'contact_messages', row.id)} className="min-w-[96px] rounded-full px-4 py-2 text-sm font-semibold shadow-sm" style={{ background: '#ef4444', color: '#fff' }}>
+                    <Button onClick={async () => await handleDelete(row._source === 'applications' ? 'job_applications' : 'contact_messages', row.id)} className="w-24 h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center" style={{ background: '#ef4444', color: '#fff' }}>
                       Delete
                     </Button>
                   </td>
