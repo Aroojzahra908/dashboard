@@ -601,6 +601,23 @@ const Admin: React.FC = () => {
                   </td>
                   <td className="px-6 py-4"><p style={{ color: colors.secondaryHex }}>{row.position || row.company || '—'}</p></td>
                   <td className="px-6 py-4">
+                    {row.resume_file_url ? (
+                      <a
+                        href={row.resume_file_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-semibold hover:underline"
+                        style={{ color: colors.primaryHex }}
+                      >
+                        View resume
+                      </a>
+                    ) : (
+                      <p className="text-sm" style={{ color: secondaryTint(0.8) }}>
+                        {row.resume_file_name || "No resume"}
+                      </p>
+                    )}
+                  </td>
+                  <td className="px-6 py-4">
                     <Button onClick={async () => await handleDelete(row._source === 'applications' ? 'job_applications' : 'contact_messages', row.id)} className="w-24 h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center" style={{ background: '#ef4444', color: '#fff' }}>
                       Delete
                     </Button>
