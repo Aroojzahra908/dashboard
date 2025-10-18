@@ -585,6 +585,7 @@ const Admin: React.FC = () => {
                 <th className="px-6 py-3 font-bold text-sm tracking-wide">Source</th>
                 <th className="px-6 py-3 font-bold text-sm tracking-wide">Contact</th>
                 <th className="px-6 py-3 font-bold text-sm tracking-wide">Details</th>
+                <th className="px-6 py-3 font-bold text-sm tracking-wide">Resume</th>
                 <th className="px-6 py-3 font-bold text-sm tracking-wide">Actions</th>
               </tr>
             </thead>
