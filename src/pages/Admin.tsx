@@ -436,13 +436,13 @@ const Admin: React.FC = () => {
                         href={application.resume_file_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm font-semibold hover:underline"
+                        className="text-sm font-semibold hover:underline text-center block"
                         style={{ color: colors.primaryHex }}
                       >
                         View resume
                       </a>
                     ) : (
-                      <p className="text-sm" style={{ color: secondaryTint(0.8) }}>
+                      <p className="text-sm text-center" style={{ color: secondaryTint(0.8) }}>
                         {application.resume_file_name || "No resume attached"}
                       </p>
                     )}
