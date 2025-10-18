@@ -600,19 +600,19 @@ const Admin: React.FC = () => {
                     {row.email ? <a href={`mailto:${row.email}`} style={{ color: colors.primaryHex }}>{row.email}</a> : <span style={{ color: secondaryTint(0.8) }}>—</span>}
                   </td>
                   <td className="px-6 py-4"><p style={{ color: colors.secondaryHex }}>{row.position || row.company || '—'}</p></td>
-                  <td className="px-6 py-4">
+                  <td className="px-6 py-4 text-center">
                     {row.resume_file_url ? (
                       <a
                         href={row.resume_file_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm font-semibold hover:underline"
+                        className="text-sm font-semibold hover:underline inline-block"
                         style={{ color: colors.primaryHex }}
                       >
                         View resume
                       </a>
                     ) : (
-                      <p className="text-sm text-center" style={{ color: secondaryTint(0.8) }}>
+                      <p className="text-sm" style={{ color: secondaryTint(0.8) }}>
                         —
                       </p>
                     )}
