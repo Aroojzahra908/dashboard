@@ -598,6 +598,11 @@ const Admin: React.FC = () => {
                   <td className="px-6 py-4"><p style={{ color: secondaryTint(0.6) }}>{row._source}</p></td>
                   <td className="px-6 py-4">
                     {row.email ? <a href={`mailto:${row.email}`} style={{ color: colors.primaryHex }} className="whitespace-nowrap">{row.email}</a> : <span style={{ color: secondaryTint(0.8) }}>—</span>}
+                    {row.phone ? (
+                      <p className="mt-1 text-xs" style={{ color: secondaryTint(0.8) }}>
+                        {row.phone}
+                      </p>
+                    ) : null}
                   </td>
                   <td className="px-6 py-4"><p style={{ color: colors.secondaryHex }}>{row.position || row.company || '—'}</p></td>
                   <td className="px-6 py-4 text-center">
