@@ -651,13 +651,18 @@ const Admin: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <a href="/" className="inline-flex items-center px-4 py-2 rounded-full font-medium" style={{ background: colors.primaryHex, color: colors.white }}>
-                View site
-              </a>
-              <button onClick={fetchAll} className="inline-flex items-center px-4 py-2 rounded-full border" style={{ borderColor: primaryTint(0.06), color: colors.secondaryHex }}>
+              <button
+                onClick={fetchAll}
+                className="inline-flex items-center px-4 py-2 rounded-full font-medium transition-all hover:opacity-90"
+                style={{ background: colors.primaryHex, color: colors.white }}
+              >
                 Refresh
               </button>
-              <button onClick={() => { logout(); navigate("/login", { replace: true }); }} className="inline-flex items-center px-4 py-2 rounded-full border" style={{ borderColor: primaryTint(0.06), color: colors.secondaryHex }}>
+              <button
+                onClick={() => { logout(); navigate("/login", { replace: true }); }}
+                className="inline-flex items-center px-4 py-2 rounded-full font-medium transition-all hover:opacity-90"
+                style={{ background: colors.primaryHex, color: colors.white }}
+              >
                 Logout
               </button>
             </div>
