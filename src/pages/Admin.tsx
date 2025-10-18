@@ -600,7 +600,7 @@ const Admin: React.FC = () => {
                   </td>
                   <td className="px-6 py-4"><p style={{ color: colors.secondaryHex }}>{row.position || row.company || '—'}</p></td>
                   <td className="px-6 py-4">
-                    <Button onClick={async () => await handleDelete(row._source === 'applications' ? 'job_applications' : 'contact_messages', row.id)} className="w-20 h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center" style={{ background: '#ef4444', color: '#fff' }}>
+                    <Button onClick={async () => await handleDelete(row._source === 'applications' ? 'job_applications' : 'contact_messages', row.id)} className="w-24 h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center" style={{ background: '#ef4444', color: '#fff' }}>
                       Delete
                     </Button>
                   </td>
