@@ -279,7 +279,7 @@ const Admin: React.FC = () => {
                       <a
                         href={`mailto:${contact.email}`}
                         style={{ color: colors.primaryHex }}
-                        className="text-xs sm:text-sm hover:underline break-all"
+                        className="text-xs sm:text-sm hover:underline whitespace-nowrap"
                       >
                         {contact.email}
                       </a>
@@ -407,7 +407,7 @@ const Admin: React.FC = () => {
                       <a
                         href={`mailto:${application.email}`}
                         style={{ color: colors.primaryHex }}
-                        className="text-sm hover:underline"
+                        className="text-sm hover:underline whitespace-nowrap"
                       >
                         {application.email}
                       </a>
@@ -597,7 +597,7 @@ const Admin: React.FC = () => {
                   </td>
                   <td className="px-6 py-4"><p style={{ color: secondaryTint(0.6) }}>{row._source}</p></td>
                   <td className="px-6 py-4">
-                    {row.email ? <a href={`mailto:${row.email}`} style={{ color: colors.primaryHex }}>{row.email}</a> : <span style={{ color: secondaryTint(0.8) }}>—</span>}
+                    {row.email ? <a href={`mailto:${row.email}`} style={{ color: colors.primaryHex }} className="whitespace-nowrap">{row.email}</a> : <span style={{ color: secondaryTint(0.8) }}>—</span>}
                   </td>
                   <td className="px-6 py-4"><p style={{ color: colors.secondaryHex }}>{row.position || row.company || '—'}</p></td>
                   <td className="px-6 py-4 text-center">
