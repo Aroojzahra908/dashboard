@@ -466,7 +466,7 @@ const Admin: React.FC = () => {
                       </Button>
                       <Button
                         onClick={async () => await handleDelete('job_applications', application.id)}
-                        className="w-20 h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center"
+                        className="w-24 h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center"
                         style={{ background: '#ef4444', color: '#fff' }}
                       >
                         Delete
