@@ -314,17 +314,17 @@ const Admin: React.FC = () => {
                     {formatDateTime(contact.created_at)}
                   </td>
                   <td className="px-3 sm:px-6 py-3 sm:py-4">
-                    <div className="flex flex-col gap-1">
+                    <div className="flex flex-row items-center gap-1">
                       <Button
                         onClick={async () => await handleApprove('contact_messages', contact.id)}
-                        className="w-20 sm:w-24 h-7 sm:h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center whitespace-nowrap"
+                        className="w-16 sm:w-20 h-6 sm:h-7 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center whitespace-nowrap"
                         style={{ background: contact.status === 'selected' ? '#10b981' : '#00b4bb', color: '#fff' }}
                       >
                         {contact.status === 'selected' ? 'Approved' : 'Pending'}
                       </Button>
                       <Button
                         onClick={async () => await handleDelete('contact_messages', contact.id)}
-                        className="w-20 sm:w-24 h-7 sm:h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center whitespace-nowrap"
+                        className="w-16 sm:w-20 h-6 sm:h-7 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center whitespace-nowrap"
                         style={{ background: '#ef4444', color: '#fff' }}
                       >
                         Delete
