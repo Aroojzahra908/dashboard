@@ -1,5 +1,6 @@
 import { FormEvent, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Eye, EyeOff } from "lucide-react";
 import colors from "@/components/colors";
 import { isAuthenticated, loginWithCredentials } from "@/lib/auth";
 
