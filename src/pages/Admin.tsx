@@ -430,19 +430,19 @@ const Admin: React.FC = () => {
                       Job ID: {application.job_id ?? "—"}
                     </p>
                   </td>
-                  <td className="px-6 py-4 space-y-2">
+                  <td className="px-6 py-4 space-y-2 text-center">
                     {application.resume_file_url ? (
                       <a
                         href={application.resume_file_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm font-semibold hover:underline text-center block"
+                        className="text-sm font-semibold hover:underline inline-block"
                         style={{ color: colors.primaryHex }}
                       >
                         View resume
                       </a>
                     ) : (
-                      <p className="text-sm text-center" style={{ color: secondaryTint(0.8) }}>
+                      <p className="text-sm" style={{ color: secondaryTint(0.8) }}>
                         {application.resume_file_name || "No resume attached"}
                       </p>
                     )}
