@@ -612,7 +612,7 @@ const Admin: React.FC = () => {
                         View resume
                       </a>
                     ) : (
-                      <p className="text-sm" style={{ color: secondaryTint(0.8) }}>
+                      <p className="text-sm text-center" style={{ color: secondaryTint(0.8) }}>
                         —
                       </p>
                     )}
