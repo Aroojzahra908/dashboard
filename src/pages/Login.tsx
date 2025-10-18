@@ -50,14 +50,24 @@ const Login = () => {
           </div>
           <div>
             <label className="block text-sm mb-1" style={{ color: "rgba(0,0,0,0.7)" }}>Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full rounded-md border px-3 py-2"
-              style={{ borderColor: "rgba(0,0,0,0.15)" }}
-              placeholder="Enter password"
-            />
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full rounded-md border px-3 py-2 pr-10"
+                style={{ borderColor: "rgba(0,0,0,0.15)" }}
+                placeholder="Enter password"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 p-1"
+                style={{ color: "rgba(0,0,0,0.5)" }}
+              >
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
+            </div>
           </div>
           {error ? (
             <div className="rounded-md px-3 py-2 text-sm" style={{ background: "#fee2e2", color: "#991b1b" }}>{error}</div>
