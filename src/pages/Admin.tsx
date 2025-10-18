@@ -266,25 +266,25 @@ const Admin: React.FC = () => {
             <tbody>
               {contacts.map((contact) => (
                 <tr key={contact.id} style={{ borderBottom: `1px solid ${secondaryTint(0.35)}`, transition: 'background-color 0.18s ease' }} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = `rgba(${colors.primaryRgb},0.08)`)} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}>
-                  <td className="px-6 py-4">
-                    <p className="font-semibold" style={{ color: colors.secondaryHex }}>
+                  <td className="px-3 sm:px-6 py-3 sm:py-4">
+                    <p className="font-semibold text-xs sm:text-sm" style={{ color: colors.secondaryHex }}>
                       {formatFullName(contact.first_name, contact.last_name)}
                     </p>
                     <p className="text-xs" style={{ color: secondaryTint(0.6) }}>
                       {contact.role || contact.company || "—"}
                     </p>
                   </td>
-                  <td className="px-6 py-4">
+                  <td className="px-3 sm:px-6 py-3 sm:py-4">
                     {contact.email ? (
                       <a
                         href={`mailto:${contact.email}`}
                         style={{ color: colors.primaryHex }}
-                        className="text-sm hover:underline"
+                        className="text-xs sm:text-sm hover:underline break-all"
                       >
                         {contact.email}
                       </a>
                     ) : (
-                      <p className="text-sm" style={{ color: secondaryTint(0.8) }}>
+                      <p className="text-xs sm:text-sm" style={{ color: secondaryTint(0.8) }}>
                         —
                       </p>
                     )}
@@ -294,7 +294,7 @@ const Admin: React.FC = () => {
                       </p>
                     ) : null}
                   </td>
-                  <td className="px-6 py-4">
+                  <td className="hidden lg:table-cell px-6 py-4">
                     <p className="text-sm" style={{ color: colors.secondaryHex }}>
                       {contact.company || "—"}
                     </p>
@@ -305,26 +305,26 @@ const Admin: React.FC = () => {
                       {contact.service || "Not specified"}
                     </span>
                   </td>
-                  <td className="px-6 py-4">
-                    <p className="max-w-md text-sm" style={{ color: colors.secondaryHex }}>
+                  <td className="hidden md:table-cell px-3 sm:px-6 py-3 sm:py-4">
+                    <p className="max-w-md text-xs sm:text-sm line-clamp-2" style={{ color: colors.secondaryHex }}>
                       {contact.message || "No additional message supplied."}
                     </p>
                   </td>
-                  <td className="px-6 py-4 text-sm" style={{ color: secondaryTint(0.6) }}>
+                  <td className="px-3 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm" style={{ color: secondaryTint(0.6) }}>
                     {formatDateTime(contact.created_at)}
                   </td>
-                  <td className="px-6 py-4">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
+                  <td className="px-3 sm:px-6 py-3 sm:py-4">
+                    <div className="flex flex-col gap-1">
                       <Button
                         onClick={async () => await handleApprove('contact_messages', contact.id)}
-                        className="w-24 h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center"
+                        className="w-20 sm:w-24 h-7 sm:h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center whitespace-nowrap"
                         style={{ background: contact.status === 'selected' ? '#10b981' : '#00b4bb', color: '#fff' }}
                       >
                         {contact.status === 'selected' ? 'Approved' : 'Pending'}
                       </Button>
                       <Button
                         onClick={async () => await handleDelete('contact_messages', contact.id)}
-                        className="w-24 h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center"
+                        className="w-20 sm:w-24 h-7 sm:h-8 rounded-full text-xs font-semibold shadow-sm flex items-center justify-center whitespace-nowrap"
                         style={{ background: '#ef4444', color: '#fff' }}
                       >
                         Delete
